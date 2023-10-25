@@ -11,6 +11,7 @@ void DFS(int i, int j)
     if (lavirint[i][j] == 'B')
     {
         ImaB = true;
+        resenje = min(resenje, brojac) - 1;
         return;
     }
 
@@ -26,23 +27,21 @@ void DFS(int i, int j)
         brojac++;
         DFS(i, j + 1);
     }
-    if (lavirint[i + 1][j] == '.' or lavirint[i][j+1] == 'B')
+    if (lavirint[i + 1][j] == '.' or lavirint[i+1][j] == 'B')
     {
         brojac++;
         DFS(i + 1, j);
     }
-    if (lavirint[i][j - 1] == '.' or lavirint[i][j+1] == 'B')
+    if (lavirint[i][j - 1] == '.' or lavirint[i][j-1] == 'B')
     {
         brojac++;
         DFS(i, j - 1);
     }
-    if (lavirint[i - 1][j] == '.' or lavirint[i][j+1] == 'B')
+    if (lavirint[i - 1][j] == '.' or lavirint[i-1][j] == 'B')
     {
         brojac++;
         DFS(i - 1, j);
     }
-    resenje = min(resenje, brojac);
-
 
 }
 
