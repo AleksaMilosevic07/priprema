@@ -2,13 +2,12 @@
 using namespace std;
 
 int N, M, brojac;
-int resenje = 100000000;
+int resenje = 100000;
 bool ImaB;
 char lavirint[1005][1005];
 
 void DFS(int i, int j)
 {
-    resenje = min(resenje, brojac);
     if (lavirint[i][j] == 'B')
     {
         ImaB = true;
@@ -42,6 +41,7 @@ void DFS(int i, int j)
         brojac++;
         DFS(i - 1, j);
     }
+    resenje = min(resenje, brojac);
 
 
 }
@@ -65,7 +65,6 @@ int main()
         {
             if (lavirint[i][j] == 'A')
             {
-                brojac = 100000;
                 DFS(i, j);
             }
         }
