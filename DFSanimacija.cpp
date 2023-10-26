@@ -17,6 +17,7 @@ void ispis()
     cout<<endl;
     cout<<endl;
     cout<<endl;
+    system("pause");
 }
 
 
